@@ -1,5 +1,15 @@
-import {Cloudinary} from "@cloudinary/url-gen";
+import { Cloudinary } from '@cloudinary/url-gen';
 
-const cld = new Cloudinary({cloud: {cloudName: import.meta.env.VITE_CLOUDINARY_CLOUDNAME}});
-  
+const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUDNAME;
+
+if (!cloudName) {
+  throw new Error('Cloudinary cloud name not found in environment variables.');
+}
+
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: cloudName,
+  },
+});
+
 export default cld;
