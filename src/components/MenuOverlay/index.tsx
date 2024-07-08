@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { anticipate, motion } from 'framer-motion';
-import { MenuOverlayProps } from '../../interfaces/MenuOverlayProps';
+import { MenuOverlayProps } from '@/interfaces/MenuOverlayProps';
 import Link from 'next/link';
 
 const MenuOverlay = ({

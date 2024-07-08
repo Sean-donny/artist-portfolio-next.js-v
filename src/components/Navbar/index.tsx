@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MenuOverlayProps } from '../../interfaces/MenuOverlayProps';
+import { MenuOverlayProps } from '@/interfaces/MenuOverlayProps';
 
 const Navbar = ({ menuOverlayOpen, setMenuOverlayOpen }: MenuOverlayProps) => {
   const menuButtonText = { option1: 'Menu', option2: 'Close' };

@@ -1,8 +1,9 @@
 'use client';
 import { useState } from 'react';
-import Slideshow from '../../components/Slideshow';
+import Slideshow from '@/components/Slideshow';
 import Images from './HeroImages';
 import Titles from './HeroTitles';
+import Image from 'next/image';
 
 // Image imports
 const SeanPortrait = '/sean_donny_portrait.jpg';
@@ -38,10 +39,12 @@ const Hero = () => {
         </div>
         <div className="hero-image-container flex-grow md:w-2/5 md:flex-none p-2">
           <figure className="flex items-center justify-center h-full overflow-hidden">
-            <img
+            <Image
               src={SeanPortrait}
               alt="Sean Donny"
               title="Sean Donny - Click to change my background colour ;)"
+              width={768}
+              height={1024}
               loading="eager"
               className="hero-image object-cover object-center h-full w-auto my-auto cursor-pointer pt-5 md:pt-0"
               onClick={bgShuffle}

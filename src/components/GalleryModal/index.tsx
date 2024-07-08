@@ -1,7 +1,7 @@
 import { anticipate, motion } from 'framer-motion';
 import { useEffect } from 'react';
 
-import { ModalContent } from '../../interfaces/ModalContent';
+import { ModalContent } from '@/interfaces/ModalContent';
 
 interface GalleryModalProps {
   modalContent: ModalContent;

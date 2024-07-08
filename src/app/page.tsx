@@ -4,7 +4,7 @@ import Works from './(Home)/Works';
 import { Metadata } from 'next';
 
 // Image imports
-const SeanPortrait = '/sean_donny_portrait.jpg';
+const defaultSocialCardImage = '/default_social_card.jpg';
 
 // SEO
 const SEO_NAME = 'Sean Donny';
@@ -13,14 +13,14 @@ const SEO_DESCRIPTION =
   'Discover the captivating art of Sean Donny, a contemporary artist in England, UK. Explore his portfolio of personal & client projects, and gallery.';
 const SEO_TYPE = 'website';
 const SEO_URL = 'https://seandonny.com';
-const SEO_IMAGE = SeanPortrait;
+const SEO_IMAGE = defaultSocialCardImage;
 const SEO_IMAGE_ALT =
   'An illustration of Cruel Santino against an orange background';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://seandonny.com'),
   title: {
-    default: SEO_TITLE,
+    default: SEO_NAME,
     template: `%s | ${SEO_NAME}`,
   },
   description: SEO_DESCRIPTION,

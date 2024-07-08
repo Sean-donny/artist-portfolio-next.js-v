@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import { useInView, motion, anticipate } from 'framer-motion';
-import { ModalContent } from '../../interfaces/ModalContent';
-import ImageData from '../../interfaces/ImageData';
+import { ModalContent } from '@/interfaces/ModalContent';
+import ImageData from '@/interfaces/ImageData';
+import Image from 'next/image';
 
 interface ModularImageGalleryProps {
   onOpen: (data: ModalContent) => () => void;
@@ -37,10 +38,12 @@ const ModularImageGallery = ({
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9 }}
           >
-            <img
+            <Image
               src={data.src}
               alt={data.alt}
               title={data.title}
+              width={data.width}
+              height={data.height}
               loading="lazy"
               className="component-image pointer-events-none"
             />

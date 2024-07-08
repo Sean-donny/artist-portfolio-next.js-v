@@ -2,12 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Image imports
-import RulesTheWorld from '../../../public/crtz_spread.jpg';
-import SubaruBoy from '../../../public/cruel_santino_subaru_boy_wide.jpg';
-import MenaceTalk from '../../../public/trill_tega_menace_talk_video_still_1.jpg';
-import SeanDonny from '../../../public/sean_donny_animated_photo.jpg';
+const RulesTheWorld = '/crtz_spread.jpg';
+const SubaruBoy = '/cruel_santino_subaru_boy_wide.jpg';
+const MenaceTalk = '/trill_tega_menace_talk_video_still_1.jpg';
+const SeanDonny = '/sean_donny_animated_photo.jpg';
 
 const Works = () => {
   const [bgColorIndex, setBgColorIndex] = useState(0);
@@ -45,12 +46,14 @@ const Works = () => {
           >
             <Link href="/gallery">
               <figure className="works-gallery-image-container h-auto lg:h-works xl:h-auto overflow-hidden flex items-center justify-center">
-                <img
-                  src={RulesTheWorld.src}
+                <Image
+                  src={RulesTheWorld}
                   alt="RulesTheWorld"
                   className="works-gallery-image object-cover object-center h-full w-auto cursor-pointer"
                   title="RulesTheWorld"
                   loading="lazy"
+                  width={1767}
+                  height={1240}
                 />
               </figure>
               <div className="works-gallery-title py-1 xl:text-center">
@@ -71,12 +74,14 @@ const Works = () => {
           >
             <Link href="/personal-projects">
               <figure className="works-personal-projects-image-container h-auto lg:h-works xl:h-auto overflow-hidden flex items-center justify-center">
-                <img
-                  src={SubaruBoy.src}
+                <Image
+                  src={SubaruBoy}
                   alt="Subaru Boy"
                   className="works-personal-projects-image object-cover object-center h-full w-auto cursor-pointer"
                   title="Subaru Boy"
                   loading="lazy"
+                  width={1920}
+                  height={1080}
                 />
               </figure>
               <div className="works-personal-projects-title py-1 xl:text-center">
@@ -99,12 +104,14 @@ const Works = () => {
           >
             <Link href="/client-projects">
               <figure className="works-client-projects-image-container h-auto lg:h-works xl:h-works2 overflow-hidden flex items-center justify-center">
-                <img
-                  src={MenaceTalk.src}
+                <Image
+                  src={MenaceTalk}
                   alt="Menace Talk"
                   className="works-client-projects-image object-cover object-center w-full h-auto cursor-pointer"
                   title="Menace Talk"
                   loading="lazy"
+                  width={1920}
+                  height={1080}
                 />
               </figure>
               <div className="works-client-projects-title py-1 xl:text-center">
@@ -125,12 +132,14 @@ const Works = () => {
           >
             <Link href="/about">
               <figure className="works-about-image-container h-auto lg:h-works xl:h-works2 overflow-hidden flex items-center justify-center">
-                <img
-                  src={SeanDonny.src}
+                <Image
+                  src={SeanDonny}
                   alt="Sean Donny animated photo"
                   className="works-about-image object-cover object-center h-full w-auto cursor-pointer"
                   title="Sean Donny animated photo"
                   loading="lazy"
+                  width={1767}
+                  height={1240}
                 />
               </figure>
               <div className="works-about-title py-1 xl:text-center">
