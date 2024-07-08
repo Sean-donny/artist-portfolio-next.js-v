@@ -1,0 +1,112 @@
+import { useEffect, useState } from 'react';
+import { anticipate, motion } from 'framer-motion';
+import { MenuOverlayProps } from '../../interfaces/MenuOverlayProps';
+import Link from 'next/link';
+
+const MenuOverlay = ({
+  menuOverlayOpen,
+  setMenuOverlayOpen,
+}: MenuOverlayProps) => {
+  const [isFocused, setIsFocused] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState<number | null>(null);
+
+  const focus = (index: number) => {
+    setIsFocused(true);
+    setHighlightedIndex(index);
+  };
+
+  const unFocus = () => {
+    setIsFocused(false);
+    setHighlightedIndex(null);
+  };
+
+  useEffect(() => {
+    document.body.classList.add('menu-overlay-open');
+    return () => {
+      document.body.classList.remove('menu-overlay-open');
+    };
+  }, [menuOverlayOpen]);
+
+  const hoverEffect =
+    'opacity linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%) 0.35s';
+
+  return (
+    <nav className={`w-full min-h-screen fixed inset-0 z-40 block`}>
+      <motion.div
+        className="w-full min-h-screen bg-black"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2, ease: anticipate }}
+      >
+        <div className="w-full min-h-screen flex items-center justify-center p-2">
+          <div>
+            <ul className="font-custom font-semibold tracking-tight lg:text-massive1 text-2xl lg:leading-massive1 text-aquatic cursor-pointer">
+              <li
+                className={`${
+                  isFocused && highlightedIndex !== 0
+                    ? 'opacity-20'
+                    : 'opacity-100'
+                }`}
+                onMouseEnter={() => focus(0)}
+                onMouseLeave={unFocus}
+                onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}
+                style={{ transition: hoverEffect }}
+              >
+                <Link href="/gallery">
+                  GALLERY&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
+                </Link>
+              </li>
+              <li
+                className={`${
+                  isFocused && highlightedIndex !== 1
+                    ? 'opacity-20'
+                    : 'opacity-100'
+                }`}
+                onMouseEnter={() => focus(1)}
+                onMouseLeave={unFocus}
+                onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}
+                style={{ transition: hoverEffect }}
+              >
+                <Link href="/personal-projects">PERSONAL PROJECTS</Link>
+              </li>
+              <li
+                className={`${
+                  isFocused && highlightedIndex !== 2
+                    ? 'opacity-20'
+                    : 'opacity-100'
+                }`}
+                onMouseEnter={() => focus(2)}
+                onMouseLeave={unFocus}
+                onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}
+                style={{ transition: hoverEffect }}
+              >
+                <Link href="/client-projects">
+                  CLIENT
+                  PROJECTS&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
+                </Link>
+              </li>
+              <li
+                className={`${
+                  isFocused && highlightedIndex !== 3
+                    ? 'opacity-20'
+                    : 'opacity-100'
+                }`}
+                onMouseEnter={() => focus(3)}
+                onMouseLeave={unFocus}
+                onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}
+                style={{ transition: hoverEffect }}
+              >
+                <Link href="/about">
+                  ABOUT&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </motion.div>
+    </nav>
+  );
+};
+
+export default MenuOverlay;
