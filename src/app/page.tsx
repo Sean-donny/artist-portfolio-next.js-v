@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: SEO_NAME,
     images: [
       {
-        url: `${SEO_URL}${SEO_IMAGE}`, // Must be an absolute URL
+        url: `https://seandonny.com/optimised${SEO_IMAGE}`, // Must be an absolute URL TODO = remove optised when fully migrated to resolve image served on new public location
         width: 1200,
         height: 628,
         alt: SEO_IMAGE_ALT,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: SEO_TITLE,
     description: SEO_DESCRIPTION,
     creator: '@blvvvckfire',
-    images: [`${SEO_URL}${SEO_IMAGE}`], // Must be an absolute URL
+    images: [`https://seandonny.com/optimised${SEO_IMAGE}`], // Must be an absolute URL
   },
   icons: {
     icon: '/favicon.ico',

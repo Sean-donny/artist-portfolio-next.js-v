@@ -43,7 +43,7 @@ const SEO = ({
       siteName: SEO_NAME,
       images: [
         {
-          url: `${SEO_URL}${SEO_IMAGE}`, // Must be an absolute URL
+          url: `https://seandonny.com/optimised${SEO_IMAGE}`, // Must be an absolute URL TODO = remove optimised when fully migrated
           width: SEO_IMAGE_WIDTH,
           height: SEO_IMAGE_HEIGHT,
           alt: SEO_IMAGE_ALT,
@@ -57,7 +57,7 @@ const SEO = ({
       title: SEO_TITLE,
       description: SEO_DESCRIPTION,
       creator: '@blvvvckfire',
-      images: [`${SEO_URL}${SEO_IMAGE}`], // Must be an absolute URL
+      images: [`https://seandonny.com/optimised${SEO_IMAGE}`], // Must be an absolute URL
     },
     icons: {
       icon: '/favicon.ico',
